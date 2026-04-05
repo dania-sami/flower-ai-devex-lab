@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flower Platform Data Lab</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+  <header class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow">Platform Engineering × Data Infrastructure</span>
+      <h1>Flower Platform Data Lab</h1>
+      <p>
+        A polished simulation of a self-service data platform for energy assets, built to demonstrate
+        ingestion, lakehouse workflows, quality controls, observability, and cost-aware platform design.
+      </p>
+      <div class="hero-actions">
+        <button id="runPipelineBtn" class="primary">Run Demo Pipeline</button>
+        <a class="secondary" href="#platform">Explore Platform</a>
+      </div>
+    </div>
+    <div class="hero-panel glass">
+      <div class="hero-grid">
+        <div><span>Lakehouse</span><strong>Bronze → Silver → Gold</strong></div>
+        <div><span>Compute</span><strong>Distributed workloads</strong></div>
+        <div><span>IaC</span><strong>Terraform-ready</strong></div>
+        <div><span>Orchestration</span><strong>Declarative + monitored</strong></div>
+      </div>
+    </div>
+  </header>
+
+  <main id="platform" class="layout">
+    <section class="stats" id="stats"></section>
+
+    <section class="panel wide glass">
+      <div class="section-head">
+        <div>
+          <h2>Energy Platform Overview</h2>
+          <p>Live-style operational view across price, demand, renewable coverage, and dispatch.</p>
+        </div>
+      </div>
+      <div class="chart-card">
+        <svg id="chart" viewBox="0 0 820 300" preserveAspectRatio="none"></svg>
+      </div>
+    </section>
+
+    <section class="grid two-col">
+      <article class="panel glass">
+        <div class="section-head">
+          <div>
+            <h2>Pipeline Runs</h2>
+            <p>Platform jobs with freshness, duration, and ownership.</p>
+          </div>
+        </div>
+        <div id="pipelineRuns" class="list"></div>
+      </article>
+
+      <article class="panel glass">
+        <div class="section-head">
+          <div>
+            <h2>Quality Framework</h2>
+            <p>Checks embedded into every workflow, not bolted on later.</p>
+          </div>
+        </div>
+        <div id="qualityChecks" class="list"></div>
+      </article>
+    </section>
+
+    <section class="grid two-col">
+      <article class="panel glass">
+        <div class="section-head">
+          <div>
+            <h2>Asset Ingestion</h2>
+            <p>Source-aware ingestion with latency and availability visibility.</p>
+          </div>
+        </div>
+        <div id="assets" class="table-wrap"></div>
+      </article>
+
+      <article class="panel glass">
+        <div class="section-head">
+          <div>
+            <h2>Platform Agents</h2>
+            <p>Rule-driven assistants supporting ingestion, quality, and cost review.</p>
+          </div>
+        </div>
+        <div id="agents" class="list"></div>
+      </article>
+    </section>
+
+    <section class="panel glass">
+      <div class="section-head">
+        <div>
+          <h2>Design Principles</h2>
+          <p>What this platform emphasizes to support self-service data teams.</p>
+        </div>
+      </div>
+      <div class="principles">
+        <div class="principle"><h3>Scalable Lakehouse</h3><p>Models evolve through clear bronze, silver, and gold layers with reproducible transformations.</p></div>
+        <div class="principle"><h3>Reliable Delivery</h3><p>Pipeline correctness, lineage, and testability are part of the default workflow.</p></div>
+        <div class="principle"><h3>Fast Developer Loops</h3><p>Declarative configs and self-service patterns help product teams move without bottlenecking platform.</p></div>
+        <div class="principle"><h3>Cost Awareness</h3><p>Performance and spend are tracked together so platform improvements are measurable.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast hidden">Demo pipeline executed successfully.</div>
+  <script src="/static/app.js"></script>
+</body>
+</html>
