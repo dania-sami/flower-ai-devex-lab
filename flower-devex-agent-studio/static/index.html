@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flower DevEx Agent Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="aurora aurora-a"></div>
+  <div class="aurora aurora-b"></div>
+  <main class="shell">
+    <section class="hero card">
+      <div class="badge">Flower inspired DevEx prototype</div>
+      <h1>Agent Studio for modern developer workflows</h1>
+      <p class="lead">A local prototype that explores how AI agents can participate in software engineering workflows with trust, quality gates, and measurable delivery impact.</p>
+      <div class="hero-grid">
+        <div class="mini-stat"><span>Focus</span><strong>DevEx for AI agents</strong></div>
+        <div class="mini-stat"><span>Guardrails</span><strong>Quality, trust, and CI</strong></div>
+        <div class="mini-stat"><span>Mode</span><strong>Local, no API keys</strong></div>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <div class="card input-panel">
+        <h2>Design a workflow</h2>
+        <p>Describe an engineering workflow and see how agent-first development could be structured safely and productively.</p>
+        <div class="form-grid">
+          <label>
+            <span>Team</span>
+            <input id="team" value="Platform Squad" />
+          </label>
+          <label>
+            <span>Workflow</span>
+            <input id="workflow" value="Review pull requests with an agent that suggests fixes and test updates" />
+          </label>
+          <label>
+            <span>Challenge</span>
+            <textarea id="challenge">Developers spend too much time on repeated review comments, missing repo context, and manually validating AI-generated code.</textarea>
+          </label>
+          <label>
+            <span>Constraints</span>
+            <textarea id="constraints">Must work with GitHub based workflows, respect code ownership, and never bypass tests.</textarea>
+          </label>
+          <label>
+            <span>Objective</span>
+            <textarea id="objective">Reduce review time while keeping correctness and trust high.</textarea>
+          </label>
+        </div>
+        <div class="action-row">
+          <button id="runBtn">Run agent studio</button>
+          <button id="demoBtn" class="secondary">Load another scenario</button>
+        </div>
+      </div>
+
+      <div class="results-column">
+        <section class="card overview">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">Recommendation</div>
+              <h2 id="resultTitle">Pull Request Copilot</h2>
+            </div>
+            <div class="pulse"></div>
+          </div>
+          <p id="recommendation"></p>
+          <div class="metrics" id="metrics"></div>
+        </section>
+
+        <section class="card">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">Agent system</div>
+              <h2>Workflow agents</h2>
+            </div>
+          </div>
+          <div id="agentCards" class="cards-grid"></div>
+        </section>
+
+        <section class="dual-grid">
+          <div class="card">
+            <div class="section-head">
+              <div>
+                <div class="eyebrow">Trust harness</div>
+                <h2>Verification layers</h2>
+              </div>
+            </div>
+            <div id="qualityHarness" class="list-grid"></div>
+          </div>
+          <div class="card">
+            <div class="section-head">
+              <div>
+                <div class="eyebrow">Rollout plan</div>
+                <h2>Pilot backlog</h2>
+              </div>
+            </div>
+            <ol id="backlog" class="backlog"></ol>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
